@@ -1,3 +1,11 @@
+(() => {
+    $('.explore').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: $('.description').offset().top -100 
+        }, 'slow');
+    });
+})();
+
 // Header fixed effect
 (() => {
     $(window).scroll(function () {

@@ -3,13 +3,36 @@
  * Home
  * =============================
  */
+.carousel-control {
+    opacity: 1;
+    background: none;
+}
+ .btn {
+     margin-top: 5%;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 500px;
+    padding: 18px 48px 16px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    letter-spacing: 2px;
+    width: 200px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+ }
 .no-padding{
     padding: 0;
 }
 
-#music {
-    font-size: 80px;
-    font-weight: 900;
+.carousel-content {
+    font-size: 80px !important;
+    font-weight: 900 !important;
 }
 
 /* welcome (home intro) */

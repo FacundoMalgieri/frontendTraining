@@ -3,6 +3,15 @@
  * Generals
  * =============================
  */
+.navbar-toggle {
+    padding-top: 3%;
+
+}
+
+.icon-bar {
+    background-color: white;
+    border: 1px white solid;
+}
 
  body {
     overflow-x: hidden;
@@ -64,7 +73,7 @@ p {
 }
 
 .page-header .breadcrumb li a {
-    color: #274abb;
+    color: #1db954;
 }
 
 /* page-titles */
@@ -87,14 +96,14 @@ p {
 .page-title h1 span,
 .page-title h2 span,
 .page-title h3 span {
-    color: #274abb;
+    color: #1db954;
 }
 
 /* buttons */
 .btn {
     border-color: transparent;
-    background-color: #274abb;
-    border: 1px solid #274abb;
+    background-color: #1db954;
+    border: 1px solid #1db954;
     color: #fff;
     cursor: pointer;
     padding: 12px 20px;
@@ -103,7 +112,7 @@ p {
     transition: all 0.2s ease-in-out;
     margin-right: 6px;
     overflow: hidden;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .btn:hover {
@@ -116,13 +125,13 @@ p {
 }
 
 .btn-bordered {
-    border: 1px solid #274abb;
+    border: 1px solid #1db954;
     background-color: transparent;
-    color: #274abb;
+    color: #1db954;
 }
 
 .btn-bordered:hover {
-    background-color: #274abb;
+    background-color: #1db954;
     color: #fff;
     opacity: 1;
 }
@@ -145,7 +154,7 @@ table > thead > tr > th {
 
 table > thead > tr > th {
     color: #fff;
-    background: #274abb;
+    background: #1db954;
 }
 
 /* Tabs */
@@ -162,10 +171,10 @@ table > thead > tr > th {
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li a:hover,
 .nav-tabs > li.active > a {
-    color: #274abb;
+    color: #1db954;
     background: none;
     border-color: transparent;
-    border-bottom: 2px solid #274abb;
+    border-bottom: 2px solid #1db954;
 }
 
 .tab-content {

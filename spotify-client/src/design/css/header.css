@@ -1,0 +1,119 @@
+/**
+ * =============================
+ * Header
+ * =============================
+ */
+
+/* navbar */
+.navbar {
+    border: none;
+    border-radius: 0;
+    position: relative;
+    background: none;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.navbar .navbar-borop {
+    padding: 10px 15px;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-fixed {
+    animation: slide-down 0.4s;
+    position:fixed !important;
+    width: 100%;
+    z-index: 2;
+    top: 0
+}
+
+@keyframes slide-down {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+/* top nabar */
+.top-navbar {
+    background-color: #274abb;
+    color: #fff;
+    position: relative;
+}
+
+.top-navbar .top-navbar-menu {
+    margin: 0;
+    line-height: 45px;
+}
+
+.top-navbar .social-icons li,
+.top-navbar .top-navbar-menu li {
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 20px 0 0;
+}
+
+.top-navbar .top-navbar-menu li i {
+    margin: 0 5px 0 0;
+    font-size: 18px;
+}
+
+.top-navbar .social-icons {
+    margin: 0;
+    padding: 0;
+}
+
+.top-navbar .social-icons li {
+    width: 45px;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #fff;
+    margin: 0 5px 0 0;
+    text-align: center;
+}
+
+.top-navbar .social-icons li:hover {
+    background: #fff;
+    transition: all 0.3s;
+}
+
+.top-navbar .social-icons li:hover a {
+    color: #274abb;
+}
+
+.top-navbar .social-icons li a {
+    color: #fff;
+    display: block;
+}
+
+/* navbar menu */
+.navbar #navbar-menu ul li {
+    margin: 0 5px;
+}
+
+.navbar #navbar-menu ul li a {
+    color: #444;
+    font-size: 16px;
+}
+
+.navbar #navbar-menu ul li a:hover,
+.navbar #navbar-menu ul li a:focus,
+.navbar #navbar-menu ul li a.active {
+    color: #fff;
+    background: #274abb;
+    border-radius: 3px;
+}

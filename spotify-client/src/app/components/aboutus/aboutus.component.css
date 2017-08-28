@@ -1,0 +1,23 @@
+/* counter up */
+.counter-up {
+    padding: 80px 0px;
+    overflow: hidden;
+    /*background: url('assets/images/background.svg');*/
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.counter-up span {
+    display: block;
+}
+
+.counter-up .icon {
+    font-size: 4em;
+}
+
+.counter-up .number,
+.counter-up .text {
+    font-size: 2em;
+}

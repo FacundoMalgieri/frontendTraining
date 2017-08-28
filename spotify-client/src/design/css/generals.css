@@ -3,10 +3,24 @@
  * Generals
  * =============================
  */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("../images/preloader.gif") center no-repeat #fff;
+}
 
- body {
+.icon-bar {
+    background-color: black;
+}
+
+body {
     overflow-x: hidden;
-    font-family: Circular, Helvetica;
+    font-family: "Varela Round", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #fff;
     font-size: 16px;
 }
 

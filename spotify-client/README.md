@@ -1,4 +1,4 @@
-# SpotifyClient
+# Borop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
@@ -26,3 +26,13 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Util commands
+npm uninstall -g angular-cli
+npm cache clean
+npm install -g @angular/cli@latest
+rm -rf node_modules dist
+npm uninstall --save-dev angular-cli
+npm install --save-dev @angular/cli@latest
+npm install

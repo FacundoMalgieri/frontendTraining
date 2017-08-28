@@ -1,0 +1,199 @@
+/**
+ * =============================
+ * Home
+ * =============================
+ */
+
+/* welcome (home intro) */
+.welcome {
+    background: #fff;
+    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+.welcome p {
+    margin: 0 !important;
+    color: #274abb;
+    display: inline-block;
+    font-size: 1.3em;
+    padding-top: 10px;
+}
+
+.welcome span {
+    color: #999;
+    display: block;
+    font-size: 0.8em;
+}
+
+.welcome .get-started {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: right;
+}
+
+/* our solutions */
+.our-solutions {
+    background: url('../images/01.png') no-repeat 150px 70px;
+    padding: 100px 0;
+}
+
+.our-solutions .solution {
+    padding: 0 20px;
+}
+
+.our-solutions .solution .solution-icon {
+    display: inline-block;
+    background: #ffffff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    height: 160px;
+    border-radius: 90px;
+    text-align: center;
+    line-height: 160px;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.our-solutions .solution:hover .solution-icon {
+    background: #274abb;
+    color: #fff;
+    transition: all 0.8s;
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.our-solutions .solution .solution-icon i {
+    font-size: 40px;
+    line-height: 160px;
+}
+
+.our-solutions .solution .solution-info h1,
+.our-solutions .solution .solution-info h2,
+.our-solutions .solution .solution-info h3 {
+    color: #274abb;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.our-solutions .solution .solution-info p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #aaaaaa;
+}
+
+/* about us */
+.about-us {
+    position: relative;
+    background: rgba(0, 0, 0, .02);
+    padding: 60px 25px;
+}
+
+.about-us h1,
+.about-us h2 {
+    font-size: 2.5em;
+}
+
+.about-us h3 {
+    font-size: 2em;
+    color: #274abb;
+}
+
+.about-us h3 span {
+    color: #333;
+}
+
+.about-us .man {
+    position: absolute;
+}
+
+/* ver bien que mediaqueries usar */
+@media only screen and (min-width: 992px) {
+    .about-us .animation span {
+        position: absolute;
+        font-size: 25px;
+        width: 60px;
+        height: 60px;
+        line-height: 65px;
+        background: #fff;
+        color: #333;
+        text-align: center;
+        border-radius: 100%;
+        transform: translateY(0px);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.1);
+            transform: translateY(0px);
+        }
+        25% {
+            box-shadow: 0 12px 12px 0px rgba(0, 0, 0, 0.3), 0 0 0 20px rgba(0, 0, 0, 0);
+        }
+        50% {
+            box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+            transform: translateY(-20px);
+        }
+        100% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0);
+            transform: translateY(0px);
+        }
+    }
+
+    @-webkit-keyframes float {
+        0% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.1);
+            transform: translateY(0px);
+        }
+        50% {
+            box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2), 0 0 0 20px rgba(0, 0, 0, 0);
+            transform: translateY(-20px);
+        }
+        100% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0);
+            transform: translateY(0px);
+        }
+    }
+
+    .about-us .animation > span.bottom {
+        bottom: 10%;
+        right: 15%;
+    }
+
+    .about-us .animation > span.middle {
+        top: 50%;
+        right: 35%;
+    }
+
+    .about-us .animation > span.top {
+            top: 10%;
+            right: 16%;
+    }
+
+    .about-us {
+        overflow: hidden;
+    }
+
+    .about-us .man {
+        right: 100px;
+        bottom: -150px;
+    }   
+}
+
+@media only screen and (min-width: 1500px) {
+    .about-us {
+        overflow: inherit
+    }
+
+    .about-us .man {
+        right: 200px;
+        bottom: 0;
+    }   
+}

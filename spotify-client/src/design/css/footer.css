@@ -1,0 +1,32 @@
+/**
+ * =============================
+ * Footer
+ * =============================
+ */
+footer {
+    padding: 20px;
+    background: #274abb;
+}
+
+footer p {
+    margin: 10px 0;
+    vertical-align: middle;
+    color: #fff;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+footer .social-icons li {
+    background: #fff;
+    color: #333;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 100%;
+    display: inline-block;
+}

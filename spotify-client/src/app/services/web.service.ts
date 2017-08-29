@@ -14,7 +14,7 @@ export class WebService {
      * @return {Object} unnamed - the user object with your data.
      */
     private getCurrentUser(): Object {
-        return JSON.parse(localStorage.getItem('currentUser'));
+        return JSON.parse(localStorage.getItem('token'));
     }
 
     /**
@@ -53,7 +53,7 @@ export class WebService {
      * @return {Observable<any>}
      */
     get(url: string): Observable<any> {
-        return this.http.get(url)
+        return this.http.get(url, this.createAuthorizationHeader())
             .map((response: Response) => response.json())
             .catch(this.handleError);
 

@@ -8,14 +8,15 @@ import { SharedModule } from "./shared.module";
 
 import { PartialsModule } from "./components/partials/partials.module";
 import { HomeComponent } from "./components/home/home.component";
-import { ContactComponent } from "./components/contact/contact.component";
+import { ExploreComponent } from "./components/explore/explore.component";
 import { AboutUsComponent } from "./components/aboutus/aboutus.component";
+import { WebService } from "./services/web.service";
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomeComponent,
-		ContactComponent,
+		ExploreComponent,
 		AboutUsComponent
 	],
 	imports: [
@@ -25,6 +26,7 @@ import { AboutUsComponent } from "./components/aboutus/aboutus.component";
 		HttpModule,
 		AppRoutes
 	],
+	providers: [WebService],
 	bootstrap: [AppComponent]
 })
 

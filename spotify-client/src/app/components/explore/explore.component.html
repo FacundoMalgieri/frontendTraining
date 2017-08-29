@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <section class="container">
+            <ul id="categories" class="list-inline text-center">
+                <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Destacados</a></li>
+                <li><a [routerLink]="['/explorar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Generos</a></li>
+                <li><a [routerLink]="['/aboutus']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Descubrir</a></li>
+            </ul>
+        <div class="row">
+            <div class="col-md-12">
+                <p id="search-label" class="dark">Busca artistas, canciones, álbumes o playlists</p>
+                <input type="text" [formControl]="search" class="form-control dark" id="search" name="search" placeholder="Escribe aquí..." autofocus autocomplete>
+            </div>
+        </div>
+
+        <section id="results" class="row">
+            <div class="col-md-12">
+
+            </div>
+        </section>
+    </section>
+</div>

@@ -11,11 +11,13 @@
 .icon-bar {
     background-color: white;
     border: 1px white solid;
+    height: 5px !important;
+    width: 30px !important;
 }
 
  body {
     overflow-x: hidden;
-    font-family: Circular, Helvetica;
+    font-family: Poppins, sans-serif, Helvetica;
     font-size: 16px;
 }
 
@@ -41,39 +43,6 @@ p {
 .page-header h2,
 .page-header h3 {
     color: #fff;
-}
-
-.page-header #particles-js {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.page-header .breadcrumb {
-    background: none;
-    padding: 8px 0px;
-    margin: 0;
-    position: relative;
-}
-
-.page-header .breadcrumb li::before {
-    font-family: "simple-line-icons";
-    content: "\e606";
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.page-header .breadcrumb li:first-child::before {
-    content: "";
-}
-
-.page-header .breadcrumb li.active {
-    color: #fff;
-}
-
-.page-header .breadcrumb li a {
-    color: #1db954;
 }
 
 /* page-titles */

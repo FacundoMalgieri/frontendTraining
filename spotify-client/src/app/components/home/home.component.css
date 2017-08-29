@@ -7,6 +7,13 @@
     opacity: 1;
     background: none;
 }
+
+.carousel-content {
+    font-size: 100px !important;
+    font-weight: 900 !important;
+    text-shadow: #333 1px 2px;
+}
+
  .btn {
      margin-top: 5%;
     font-size: 14px;
@@ -28,11 +35,6 @@
  }
 .no-padding{
     padding: 0;
-}
-
-.carousel-content {
-    font-size: 80px !important;
-    font-weight: 900 !important;
 }
 
 /* welcome (home intro) */

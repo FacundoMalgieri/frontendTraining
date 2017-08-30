@@ -13,9 +13,9 @@
         </div>
 
         <section id="results" class="row">
-            <div class="col-md-12">
-	<a role="button" (click)="login()">Autorizar</a>
-
+            <div class="col-md-4 text-center" *ngFor="let result of results">
+                <h1 id="resultName">{{result.name}}</h1>
+                <img id="resultImg" src="{{result.images['2']?.url}}" alt="artistImg">
             </div>
         </section>
     </section>

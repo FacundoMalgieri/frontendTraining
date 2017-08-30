@@ -12,11 +12,10 @@
 
                     <a href="#"><img src="assets/images/logo.jpg" alt="logo agencia" height="50"></a>                    
                 </div>
-
                 <div class="collapse navbar-collapse text-center" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-                        <li><a [routerLink]="['/explorar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Explorar</a></li>
+                        <li><a (click)="login()" [routerLink]="['/explorar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Explorar</a></li>
                         <li><a [routerLink]="['/aboutus']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a></li>
                     </ul>
                 </div>

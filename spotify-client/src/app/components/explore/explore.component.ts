@@ -26,7 +26,10 @@ export class ExploreComponent implements OnInit {
          this.search.valueChanges
              .subscribe(search => {
              this.webService.get(this.searchUrl+search)
-               .subscribe(res => this.results = res)
+               .subscribe(res => {
+                   if(res.status === 400) return;
+                   else this.results = res.artists.items;
+               })
              })
     }
 

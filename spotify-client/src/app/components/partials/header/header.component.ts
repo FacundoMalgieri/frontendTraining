@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppRoutes } from "../../../app.routes";
 import { environment } from "environments/environment";
+import { WebService } from "../../../services/web.service";
 
 @Component({
     moduleId: module.id,
@@ -11,5 +12,9 @@ import { environment } from "environments/environment";
 })
 
 export class HeaderComponent {
-    constructor(private router: Router) { }
+    constructor(private router: Router, private webService: WebService) { }
+
+    login() {
+        this.webService.generateToken();
+    }
 }

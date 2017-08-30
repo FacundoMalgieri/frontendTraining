@@ -2,6 +2,15 @@
     padding: 0;
 }
 
+#resultName {
+    color: white;
+}
+
+#resultImg {
+    width: 150px;
+    height: 150px;
+}
+
 #categories {
     font-size:22px;
     font-weight: 900;

@@ -12,24 +12,30 @@
                     autofocus autocomplete>
             </div>
         </div>
-        <section *ngIf='artistResults?.length > 0 || albumResults?.length > 0 || trackResults?.length > 0 || categoriesResults?.length > 0'
+        <section *ngIf='artistResults?.length > 0 || albumResults?.length > 0 || trackResults?.length > 0 
+            || categoriesResults?.length > 0 || playlistsResults?.length > 0'
             id="results" class="row">
-            <div class="col-md-4 text-center" *ngFor="let result of albumResults">
-                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+            <div class="col-md-4 text-center" *ngFor="let result of artistResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
                 <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
             </div>
-            <div class="col-md-4 text-center" *ngFor="let result of artistResults">
-                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+            <div class="col-md-4 text-center" *ngFor="let result of albumResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
+                <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
+            </div>
+            <div class="col-md-4 text-center" *ngFor="let result of playlistsResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
                 <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
             </div>
             <div class="col-md-4 text-center" *ngFor="let result of trackResults">
-                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
                 <img id="resultImg" title={{result?.name}} src="{{result.album.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
             </div>
             <div class="col-md-4 text-center" *ngFor="let result of categoriesResults">
-                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
                 <img id="resultImg" title={{result?.name}} src="{{result.icons['0']?.url}}" class="img-thumbnail" alt="artistImg">
             </div>
+
         </section>
     </section>
 </div>

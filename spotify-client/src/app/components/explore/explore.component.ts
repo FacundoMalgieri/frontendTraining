@@ -15,6 +15,7 @@ declare var particlesJS: any;
 export class ExploreComponent implements OnInit {
     search: FormControl = new FormControl('', Validators.required);
     categoriesResults: any[] = [];
+    playlistsResults: any[] = [];
     artistResults: any[] = [];
     trackResults: any[] = [];
     albumResults: any[] = [];
@@ -40,7 +41,6 @@ export class ExploreComponent implements OnInit {
     query(type: string, result: any[]) {
         this.search.valueChanges.subscribe(search => {
             this.webService.get(this.searchUrl + search + '&type=' + type).subscribe((res) => {
-                console.log(this.artistResults.length);
                 this.organizeData(res, type);
             }, error => {
                 this.albumResults = [];
@@ -63,9 +63,10 @@ export class ExploreComponent implements OnInit {
                 break;
             case 'categories':
                 this.categoriesResults = res.categories.items;
+                this.albumResults = [];
                 break;
             case 'featured-playlists':
-                this.albumResults = res.playlists.items;
+                this.playlistsResults = res.playlists.items;
                 break;
             case 'new-releases':
                 this.albumResults = res.albums.items;

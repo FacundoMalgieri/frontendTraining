@@ -67,7 +67,6 @@ export class WebService {
         return new RequestOptions({ headers: headers });
     }
 
-
     /**
      * This method performs a GET request to the API.
      * @param {String} url - a partial path to the API.
@@ -77,7 +76,6 @@ export class WebService {
         return this.http.get(url, this.createAuthorizationHeader())
             .map((response: Response) => response.json())
             .catch(this.handleError);
-
     }
 
     /**

@@ -1,21 +1,19 @@
 .col-md-12 {
-    padding: 0;
+    padding: 10px;
 }
 
-#resultName {
-    color: white;
-}
-
-#resultImg {
-    width: 150px;
-    height: 150px;
+.col-md-4 {
+    padding: 2%;
+    width: 33.33%;
+    float: left;
 }
 
 #categories {
     font-size:22px;
     font-weight: 900;
-    margin: 0;
+    margin: auto;
 }
+
 #categories a {
     color: white !important;
     text-decoration: none;
@@ -47,6 +45,16 @@
     min-height: 100px;
     margin-bottom: 3%;
     box-shadow: 2px 4px black;
+}
+
+#resultName {
+    color: white;
+    margin: 3%;
+}
+
+#resultImg {
+    width: 150px;
+    height: 150px;
 }
 
 #results {

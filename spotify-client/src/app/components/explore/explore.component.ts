@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { WebService } from "../../services/web.service";
-import { Params } from "@angular/router";
+import { WebService } from '../../services/web.service';
+import { Params } from '@angular/router';
 
 declare var particlesJS: any;
 
@@ -14,29 +14,76 @@ declare var particlesJS: any;
 
 export class ExploreComponent implements OnInit {
     search: FormControl = new FormControl('', Validators.required);
-    results: any[] = [];
-    searchUrl: string = "https://api.spotify.com/v1/search?type=artist&q="
+    categoriesResults: any[] = [];
+    artistResults: any[] = [];
+    trackResults: any[] = [];
+    albumResults: any[] = [];
+    searchUrl: string = 'https://api.spotify.com/v1/search?q='
+    selectedType: string;
+    
     constructor(
         private fb: FormBuilder,
         private router: Router,
         private route: ActivatedRoute,
         private webService: WebService) { }
 
+    /**
+     * Subscribes the search Form Control to all posibles queries.
+     */
     ngOnInit(): void {
-         this.search.valueChanges
-             .subscribe(search => {
-             this.webService.get(this.searchUrl+search)
-               .subscribe(res => {
-                   if(res.status === 400) return;
-                   else this.results = res.artists.items;
-               })
-             })
+        this.query('track', this.trackResults);
+        this.query('artist', this.artistResults);
+        this.query('album',this.albumResults);
+    }
+
+
+    query(type: string, result: any[]) {
+        this.search.valueChanges.subscribe(search => {
+            this.webService.get(this.searchUrl + search + '&type=' + type).subscribe((res) => {
+                console.log(this.artistResults.length);
+                this.organizeData(res, type);
+            }, error => {
+                this.albumResults = [];
+                this.artistResults = [];
+                this.trackResults = [];
+            })
+        })
+    }
+
+    organizeData(res: any, type: string) {
+        switch (type) {
+            case 'artist':
+                this.artistResults = res.artists.items;
+                break;
+            case 'track':
+                this.trackResults = res.tracks.items;
+                break;
+            case 'album':
+                this.albumResults = res.albums.items;
+                break;
+            case 'categories':
+                this.categoriesResults = res.categories.items;
+                break;
+            case 'featured-playlists':
+                this.albumResults = res.playlists.items;
+                break;
+            case 'new-releases':
+                this.albumResults = res.albums.items;
+                break;
+        }
     }
 
     login() {
         this.webService.generateToken();
     }
+
+    selectType(value: string) {
+        this.webService.get('https://api.spotify.com/v1/browse/' + value).subscribe(res => {
+            console.log(res)
+            this.organizeData(res, value);
+        })
+    }
     getResults() {
-        
+
     }
 }

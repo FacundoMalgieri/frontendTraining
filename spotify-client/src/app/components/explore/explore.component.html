@@ -1,21 +1,34 @@
 <div class="wrapper">
     <section class="container">
-            <ul id="categories" class="list-inline text-center">
-                <li><a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Destacados</a></li>
-                <li><a [routerLink]="['/explorar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Generos</a></li>
-                <li><a [routerLink]="['/aboutus']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Descubrir</a></li>
-            </ul>
+        <ul id="categories" class="list-inline text-center">
+            <li><a role="button" (click)="selectType('new-releases')">Nuevos Lanzamientos</a></li>
+            <li><a role="button" (click)="selectType('categories')">Categorias</a></li>
+            <li><a role="button" (click)="selectType('featured-playlists')">Playlists Recomendadas</a></li>
+        </ul>
         <div class="row">
             <div class="col-md-12">
                 <p id="search-label" class="dark">Busca artistas, canciones, álbumes o playlists</p>
-                <input type="text" [formControl]="search" class="form-control dark" id="search" name="search" placeholder="Escribe aquí..." autofocus autocomplete>
+                <input type="text" [formControl]="search" class="form-control dark" id="search" name="search" placeholder="Escribe aquí..."
+                    autofocus autocomplete>
             </div>
         </div>
-
-        <section id="results" class="row">
-            <div class="col-md-4 text-center" *ngFor="let result of results">
-                <h1 id="resultName">{{result.name}}</h1>
-                <img id="resultImg" src="{{result.images['2']?.url}}" alt="artistImg">
+        <section *ngIf='artistResults?.length > 0 || albumResults?.length > 0 || trackResults?.length > 0 || categoriesResults?.length > 0'
+            id="results" class="row">
+            <div class="col-md-4 text-center" *ngFor="let result of albumResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+                <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
+            </div>
+            <div class="col-md-4 text-center" *ngFor="let result of artistResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+                <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
+            </div>
+            <div class="col-md-4 text-center" *ngFor="let result of trackResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+                <img id="resultImg" title={{result?.name}} src="{{result.album.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
+            </div>
+            <div class="col-md-4 text-center" *ngFor="let result of categoriesResults">
+                <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:10}}</h4>
+                <img id="resultImg" title={{result?.name}} src="{{result.icons['0']?.url}}" class="img-thumbnail" alt="artistImg">
             </div>
         </section>
     </section>

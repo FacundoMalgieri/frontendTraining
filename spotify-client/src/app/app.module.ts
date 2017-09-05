@@ -10,6 +10,7 @@ import { PartialsModule } from "./components/partials/partials.module";
 import { HomeComponent } from "./components/home/home.component";
 import { ExploreComponent } from "./components/explore/explore.component";
 import { AboutUsComponent } from "./components/aboutus/aboutus.component";
+import { ArtistComponent } from "./components/artist/artist.component";
 import { WebService } from "./services/web.service";
 
 @NgModule({
@@ -17,7 +18,8 @@ import { WebService } from "./services/web.service";
 		AppComponent,
 		HomeComponent,
 		ExploreComponent,
-		AboutUsComponent
+		AboutUsComponent,
+		ArtistComponent
 	],
 	imports: [
 		SharedModule,

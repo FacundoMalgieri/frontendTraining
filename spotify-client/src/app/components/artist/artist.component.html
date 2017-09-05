@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="row dark">
+            <div class="col-md-12 white text-center">
+                <h1 id="resultName">{{result?.name}}</h1>
+                <img id="resultImg" src="{{result?.images['0']?.url}}" alt="">
+                <h4 id="popularity">Popularidad: {{result?.popularity}}</h4>
+                <ul class="list-inline">
+                    <li *ngFor="let genre of result?.genres" class="label label-default">{{genre}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li *ngFor="let album of albums?.items" class="list-group-item">
+                        <a role="link" (click)="getTracks(album?.id)">
+                            <img src="{{album?.images['0']?.url}}" alt="" class="img-thumbnail">
+                            <span id="albumName">{{album?.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

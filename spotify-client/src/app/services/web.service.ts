@@ -31,40 +31,10 @@ export class WebService {
             let fragment1 = !!fragment ? fragment.match(/^(.*?)&/) : '';
             if (!!fragment1) {
                 this.token = fragment1[1].replace('access_token=', '');
+                console.log(this.token);
                 localStorage.setItem('token', this.token)
             }
         })
-    }
-    
-    /**
-     * This method is used to get the current user's from 
-     * the local storage JSON value parsed as an object.
-     * @return {Object} unnamed - the user object with your data.
-     */
-    private getCurrentUser(): Object {
-        return localStorage.getItem('token');
-    }
-
-    /**
-     * This method creates headers and adds them into options, for further requests.
-     * @param {Any} body - the body of the request.
-     * @return {RequestOptions}
-     */
-    private createAuthorizationHeader(body?: any) {
-        let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
-        let token: any = this.getCurrentUser();
-
-        if (token)
-            headers.append('Authorization', 'Bearer ' + token)
-        if (body) {
-        console.log(headers)
-            return new RequestOptions({
-                headers: headers,
-                body: body
-            });
-        }
-
-        return new RequestOptions({ headers: headers });
     }
 
     /**
@@ -111,6 +81,35 @@ export class WebService {
             .catch(this.handleError);
     }
 
+     
+    /**
+     * This method is used to get the current user's from 
+     * the local storage JSON value parsed as an object.
+     * @return {Object} unnamed - the user object with your data.
+     */
+    private getCurrentUser(): Object {
+        return localStorage.getItem('token');
+    }
+
+    /**
+     * This method creates headers and adds them into options, for further requests.
+     * @param {Any} body - the body of the request.
+     * @return {RequestOptions}
+     */
+    private createAuthorizationHeader(body?: any) {
+        let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
+        let token: any = this.getCurrentUser();
+        if (token)
+            headers.append('Authorization', 'Bearer ' + token)
+        if (body) {
+        console.log(headers)
+            return new RequestOptions({
+                headers: headers,
+                body: body
+            });
+        }
+        return new RequestOptions({ headers: headers });
+    }
     /**
      * This method throws the error status text.
      * @param {Response} error - the response containing the error.

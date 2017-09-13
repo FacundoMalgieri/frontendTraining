@@ -19,6 +19,10 @@ export class ArtistComponent implements OnInit {
         private route: ActivatedRoute,
         private webService: WebService) { }
 
+    
+    /**
+     * Subscribes to the url's params in order to fetch the artist's albums
+     */
     ngOnInit() {
         this.route.params.subscribe(
             params => {
@@ -36,11 +40,19 @@ export class ArtistComponent implements OnInit {
         );
     }
 
+    /**
+     * Navigates back to the explore section
+     */
     navigateBack() {
         this.router.navigate(['/explorar'])
-    }
+    }   
 
-   getTracks(id: string, type: string): void {
+    /**
+     * Navigates to the album section to display an play it's tracks.
+     * 
+     * @param id the album's id
+     */
+   getTracks(id: string): void {
         this.router.navigate(['/album/' + id]);
     }
 

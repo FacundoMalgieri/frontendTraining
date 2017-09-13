@@ -17,7 +17,10 @@ export class AlbumComponent implements OnInit {
         private router: Router,
         private route: ActivatedRoute,
         private webService: WebService) { }
-
+    
+    /**
+     * Subscribes to the url's params in order to fetch the album
+     */
     ngOnInit() {
         this.route.params.subscribe(
             params => {
@@ -28,6 +31,10 @@ export class AlbumComponent implements OnInit {
             }
         );
     }
+
+    /**
+     * Navigates to the album's artist section.
+     */
     navigateBack() {
         this.router.navigate(['/artist/artists/' + this.result.artists[0].id]);
     }

@@ -14,6 +14,9 @@ import { WebService } from "../../../services/web.service";
 export class HeaderComponent {
     constructor(private router: Router, private webService: WebService) { }
 
+    /**
+     * Redirects to Spotify Authorization API
+     */
     login() {
         this.webService.generateToken();
     }

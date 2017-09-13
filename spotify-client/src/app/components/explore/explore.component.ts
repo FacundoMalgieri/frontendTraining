@@ -56,6 +56,9 @@ export class ExploreComponent implements OnInit {
         this.router.navigate(['/album/' + id]);
     }
 
+    /**
+     * Some functionalities aren't implemented to save time due they'r not a functional or optional requisite
+     */
     openAlert() {
         alert('La funcionalidad para playlists y categorías aún no esta soportada.')
     }

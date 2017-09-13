@@ -18,7 +18,7 @@
             <div class="col-md-12 ">
                 <ul class="list-group">
                     <li *ngFor="let album of albums?.items" class="list-group-item">
-                        <a role="link" (click)="getTracks(album?.id,'albums')">
+                        <a role="link" (click)="getTracks(album?.id)">
                             <img src="{{album?.images['0']?.url}}" alt="" class="img-thumbnail">
                             <span id="albumName">{{album?.name}}</span>
                         </a>

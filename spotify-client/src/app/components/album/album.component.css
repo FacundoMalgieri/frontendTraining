@@ -65,16 +65,8 @@ audio {
     letter-spacing: 2px;
 }
 
-#artistInfo {
-    position: absolute;
-    bottom:10%;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #resultName {
-    color: white;
+    color: #1db954;;
     font-weight: 900;
     font-size: 40px;
     margin: 1%;

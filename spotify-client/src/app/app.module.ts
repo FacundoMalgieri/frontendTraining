@@ -1,21 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AppRoutes } from './app.routes';
-import { environment } from "environments/environment";
 import { SharedModule } from "./shared.module";
+import { environment } from "environments/environment";
+import { HttpModule } from '@angular/http';
+import { AppRoutes } from './app.routes';
+import { NgModule } from '@angular/core';
 
-import { PartialsModule } from "./components/partials/partials.module";
-import { HomeComponent } from "./components/home/home.component";
 import { ExploreComponent } from "./components/explore/explore.component";
 import { AboutUsComponent } from "./components/aboutus/aboutus.component";
 import { ArtistComponent } from "./components/artist/artist.component";
+import { AlbumComponent } from "./components/album/album.component";
+import { PartialsModule } from "./components/partials/partials.module";
+import { HomeComponent } from "./components/home/home.component";
 import { WebService } from "./services/web.service";
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		AlbumComponent,
 		HomeComponent,
 		ExploreComponent,
 		AboutUsComponent,

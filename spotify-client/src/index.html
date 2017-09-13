@@ -39,4 +39,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
 <script src="assets/js/plugins.js"></script>
 <script src="assets/js/common.js"></script>
+
+<script>
+		document.addEventListener('play', function (e) {
+			var audios = document.getElementsByTagName('audio');
+			for (var i = 0, len = audios.length; i < len; i++) {
+				if (audios[i] != e.target) {
+					audios[i].pause();
+				}
+			}
+		}, true);
+	</script>
 </html>

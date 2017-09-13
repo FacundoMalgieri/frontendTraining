@@ -16,31 +16,31 @@
             || categoriesResults?.length > 0 || playlistsResults?.length > 0' id="results" class="row">
             <div class="col-md-4 text-center" *ngFor="let result of artistResults">
                 <a role="link" (click)="openSelected(result?.id,'artists')">
-                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
+                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:15}}</h4>
                     <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
                 </a>
             </div>
             <div class="col-md-4 text-center" *ngFor="let result of albumResults">
                 <a role="link" (click)="openSelected(result?.id,albums)">
-                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
+                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:15}}</h4>
                     <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
                 </a>
             </div>
             <div class="col-md-4 text-center" *ngFor="let result of playlistsResults">
                 <a role="link" (click)="openSelected(result?.id, playlists)">
-                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
+                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:15}}</h4>
                     <img id="resultImg" title={{result?.name}} src="{{result.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
                 </a>
             </div>
             <div class="col-md-4 text-center" *ngFor="let result of trackResults">
                 <a role="link" (click)="openSelected(result?.id, tracks)">
-                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
+                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:15}}</h4>
                     <img id="resultImg" title={{result?.name}} src="{{result.album.images['0']?.url}}" class="img-thumbnail" alt="artistImg">
                 </a>
             </div>
             <div class="col-md-4 text-center" *ngFor="let result of categoriesResults">
                 <a role="link" (click)="openSelected(result?.id, categories)">
-                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:12}}</h4>
+                    <h4 id="resultName" title={{result?.name}}>{{result.name | slice:0:15}}</h4>
                     <img id="resultImg" title={{result?.name}} src="{{result.icons['0']?.url}}" class="img-thumbnail" alt="artistImg">
                 </a>
             </div>

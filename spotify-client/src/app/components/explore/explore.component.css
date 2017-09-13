@@ -21,7 +21,7 @@ a {
 }
 
 #categories li:hover {
-    background-color: rgba(25,25,25,0.4) !important;
+    background-color: rgba(3, 247, 49, 0.40) !important;
 }
 
 #categories li {
@@ -74,5 +74,5 @@ a {
 }
 .wrapper {
     min-height: 100vh;
-    background: #1db954;
+    background: black;
 }

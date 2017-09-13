@@ -4,14 +4,13 @@ import { WebService } from "../../services/web.service";
 
 @Component({
     moduleId: module.id,
-    selector: 'artist-comp',
-    templateUrl: 'artist.component.html',
-    styleUrls: ['artist.component.css']
+    selector: 'album-comp',
+    templateUrl: 'album.component.html',
+    styleUrls: ['album.component.css']
 })
-export class ArtistComponent implements OnInit {
+export class AlbumComponent implements OnInit {
     searchUrl: string = 'https://api.spotify.com/v1/'
     result: any;
-    albums: any;
     constructor(
         private router: Router,
         private route: ActivatedRoute,
@@ -20,22 +19,13 @@ export class ArtistComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(
             params => {
-                let type = params['type'];
                 let id = params['id'];
-                let url = this.searchUrl + type + '/' + id + '/';
-                this.webService.get(url).subscribe(res => {
+                this.webService.get(this.searchUrl + 'albums/' + id).subscribe(res => {
                     this.result = res;
-                });
-                this.webService.get(url + 'albums').subscribe(res => {
-                    this.albums = res;
+                    console.log(res);
                 })
 
             }
         );
     }
-
-   getTracks(id: string, type: string): void {
-        this.router.navigate(['/album/' + id]);
-    }
-
 }

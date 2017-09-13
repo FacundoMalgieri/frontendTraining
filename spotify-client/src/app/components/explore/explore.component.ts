@@ -35,50 +35,62 @@ export class ExploreComponent implements OnInit {
 
     /**
      * Navigates to the desired user to update.
-     * @param id 
+     * 
+     * @param id the artist's id.
      */
     openSelected(id: string, type: string): void {
         this.router.navigate(['/artist/' + type + '/' + id]);
     }
 
     /**
-     * This method generates the token to be authorized to make queries to the API.
+     * Generates the token to be authorized to make queries to the API.
      */
     login(): void {
         this.webService.generateToken();
     }
 
     /**
-     * This is to make a query and display the following values:
+     * Makes a query and displays the following values:
      *  
-     * @param value new releases, featured playlists and categories
+     * @param value new releases, featured playlists and categories.
      */
     selectType(value: string): void {
         this.webService.get('https://api.spotify.com/v1/browse/' + value).subscribe(res => {
             this.organizeData(res, value);
         }, error => {
-            this.albumResults = [];
-            this.artistResults = [];
-            this.trackResults = [];
-            this.webService.generateToken();
+            this.errorHandler(error);
         })
     }
 
     /**
+     * If the error's status text is Unauthorized it generates a new token. 
+     * (If user isn't logged it will redirect to spotify's login form).
+     * If its another error it only clears the Results arrays.
+     *
+     *  @param error the error from the response.
+     */
+    private errorHandler(error: any) {
+        if (error.statusText === "Unauthorized") {
+            this.webService.generateToken();
+        } else {
+            this.albumResults = [];
+            this.artistResults = [];
+            this.trackResults = [];
+            this.playlistsResults = [];
+            this.categoriesResults = [];
+        }
+    }
+    /**
      * Makes a query to the API to display the request result.
      * 
-     * @param type artist, track , album
+     * @param type artist, track , album.
      */
     private query(type: string): void {
         this.search.valueChanges.subscribe(search => {
             this.webService.get(this.searchUrl + search + '&type=' + type).subscribe((res) => {
-                console.log(res);
                 this.organizeData(res, type);
             }, error => {
-                this.albumResults = [];
-                this.artistResults = [];
-                this.trackResults = [];
-                this.webService.generateToken();
+               this.errorHandler(error);                
             })
         })
     }
@@ -86,8 +98,8 @@ export class ExploreComponent implements OnInit {
     /**
      * This method is to save the response data in the correct array.
      * 
-     * @param res the response of the request
-     * @param type the type of result
+     * @param res the response of the request.
+     * @param type the type of result.
      */
     private organizeData(res: any, type: string): void {
         switch (type) {

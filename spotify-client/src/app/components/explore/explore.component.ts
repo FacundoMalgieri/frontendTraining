@@ -28,18 +28,36 @@ export class ExploreComponent implements OnInit {
      * Subscribes the search Form Control to all posibles queries.
      */
     ngOnInit(): void {
+        if(localStorage.getItem('token') == null) this.webService.generateToken();
         this.query('track');
         this.query('artist');
         this.query('album');
+        this.router.events.subscribe((evt) => {
+            if ((evt instanceof NavigationEnd))
+                window.scrollTo(0, 0);
+        });
     }
 
     /**
-     * Navigates to the desired user to update.
+     * Navigates to the desired artist
      * 
      * @param id the artist's id.
      */
-    openSelected(id: string, type: string): void {
-        this.router.navigate(['/artist/' + type + '/' + id]);
+    openArtist(id: string, type: string): void {
+        this.router.navigate(['/artist/artists/' + id]);
+    }
+
+    /**
+     * Navigates to the desired album
+     * 
+     * @param id the artist's id.
+     */
+    openAlbum(id: string, type: string): void {
+        this.router.navigate(['/album/' + id]);
+    }
+
+    openAlert() {
+        alert('La funcionalidad para playlists y categorías aún no esta soportada.')
     }
 
     /**
@@ -56,7 +74,7 @@ export class ExploreComponent implements OnInit {
      */
     selectType(value: string): void {
         this.webService.get('https://api.spotify.com/v1/browse/' + value).subscribe(res => {
-            this.organizeData(res, value);
+            this.organizeData(res, value);            
         }, error => {
             this.errorHandler(error);
         })
@@ -80,6 +98,7 @@ export class ExploreComponent implements OnInit {
             this.categoriesResults = [];
         }
     }
+
     /**
      * Makes a query to the API to display the request result.
      * 

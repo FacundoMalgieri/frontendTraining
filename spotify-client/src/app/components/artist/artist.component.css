@@ -37,6 +37,13 @@
     max-width:150px;
 }
 
+#navigateBack {
+    position: fixed;
+    left: 1%;
+    top: 20%;
+    z-index: 99;
+}
+
 #albumName {
     font-size: 30px;
     color: black;

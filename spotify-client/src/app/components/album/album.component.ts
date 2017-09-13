@@ -11,6 +11,8 @@ import { WebService } from "../../services/web.service";
 export class AlbumComponent implements OnInit {
     searchUrl: string = 'https://api.spotify.com/v1/'
     result: any;
+    id: any;
+    
     constructor(
         private router: Router,
         private route: ActivatedRoute,
@@ -19,13 +21,14 @@ export class AlbumComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(
             params => {
-                let id = params['id'];
-                this.webService.get(this.searchUrl + 'albums/' + id).subscribe(res => {
+                this.id = params['id'];
+                this.webService.get(this.searchUrl + 'albums/' + this.id).subscribe(res => {
                     this.result = res;
-                    console.log(res);
                 })
-
             }
         );
+    }
+    navigateBack() {
+        this.router.navigate(['/artist/artists/' + this.result.artists[0].id]);
     }
 }

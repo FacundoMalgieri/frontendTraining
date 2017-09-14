@@ -4,6 +4,11 @@
     border-radius: 0 !important;
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .col-max-height {
     max-height: 700px;
 }
@@ -34,7 +39,7 @@
 }
 
 .img-thumbnail {
-    max-width:150px;
+    max-width: 150px;
 }
 
 #navigateBack {
@@ -42,6 +47,9 @@
     left: 1%;
     top: 20%;
     z-index: 99;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 #albumName {
@@ -89,6 +97,9 @@
 @media only screen and (max-width: 700px) {
     #resultName {
         font-size: 70px;
+    }
+    #albumName {
+        font-size: 20px;
     }
     
 }

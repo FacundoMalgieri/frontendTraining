@@ -50,6 +50,9 @@ audio {
     left: 1%;
     top: 20%;
     z-index: 99;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 #trackName {
@@ -81,6 +84,9 @@ audio {
 @media only screen and (max-width: 700px) {
     #resultName {
         font-size: 20px;
+    }
+    #trackName {
+        font-size: 18px;
     }
     
 }

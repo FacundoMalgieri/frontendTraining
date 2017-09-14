@@ -14,8 +14,18 @@
     text-shadow: #333 1px 2px;
 }
 
- .btn {
-     margin-top: 5%;
+@media only screen and (max-width: 700px) {
+    .carousel-content {
+        font-size: 40px !important;
+        height: 75px;
+    }
+    .btn{ 
+        margin-top: 10% !important;
+    }
+}
+
+.btn {
+    margin-top: 5%;
     font-size: 14px;
     line-height: 1.5;
     border-radius: 500px;
@@ -31,8 +41,8 @@
     touch-action: manipulation;
     cursor: pointer;
     border: 1px solid transparent;
-
  }
+
 .no-padding{
     padding: 0;
 }
@@ -67,7 +77,6 @@
 
 /* our solutions */
 .our-solutions {
-    background: url('/assets/images/01.png') no-repeat 150px 70px;
     padding: 100px 0;
 }
 
@@ -121,112 +130,3 @@
     color: #aaaaaa;
 }
 
-/* about us */
-.about-us {
-    position: relative;
-    background: rgba(0, 0, 0, .02);
-    padding: 60px 25px;
-}
-
-.about-us h1,
-.about-us h2 {
-    font-size: 3em;
-}
-
-.about-us h3 {
-    font-size: 2em;
-    color: #1db954;
-}
-
-.about-us h3 span {
-    color: #333;
-}
-
-.about-us .man {
-    position: absolute;
-}
-
-/* ver bien que mediaqueries usar */
-@media only screen and (min-width: 992px) {
-    .about-us .animation span {
-        position: absolute;
-        font-size: 25px;
-        width: 60px;
-        height: 60px;
-        line-height: 65px;
-        background: #fff;
-        color: #333;
-        text-align: center;
-        border-radius: 100%;
-        transform: translateY(0px);
-        animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0% {
-            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.1);
-            transform: translateY(0px);
-        }
-        25% {
-            box-shadow: 0 12px 12px 0px rgba(0, 0, 0, 0.3), 0 0 0 20px rgba(0, 0, 0, 0);
-        }
-        50% {
-            box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-            transform: translateY(-20px);
-        }
-        100% {
-            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0);
-            transform: translateY(0px);
-        }
-    }
-
-    @-webkit-keyframes float {
-        0% {
-            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.1);
-            transform: translateY(0px);
-        }
-        50% {
-            box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2), 0 0 0 20px rgba(0, 0, 0, 0);
-            transform: translateY(-20px);
-        }
-        100% {
-            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0);
-            transform: translateY(0px);
-        }
-    }
-
-    .about-us .animation > span.bottom {
-        bottom: 10%;
-        right: 15%;
-    }
-
-    .about-us .animation > span.middle {
-        top: 50%;
-        right: 35%;
-    }
-
-    .about-us .animation > span.top {
-            top: 10%;
-            right: 16%;
-    }
-
-    .about-us {
-        overflow: hidden;
-    }
-
-    .about-us .man {
-        right: 100px;
-        bottom: -150px;
-    }   
-}
-
-@media only screen and (min-width: 1500px) {
-    .about-us {
-        overflow: inherit
-    }
-
-    .about-us .man {
-        right: 200px;
-        bottom: 0;
-    }   
-}

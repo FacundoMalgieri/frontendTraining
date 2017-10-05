@@ -2,7 +2,7 @@
     color:white;
     margin-top:0;
     min-height: 100vh;
-    background: rgba(0, 0, 0, 0.8) !important;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .shadow {
@@ -14,9 +14,9 @@
     padding: 4%;
 }
 
-p { 
+p {
     color: white;
-    font-size: 20px;    
+    font-size: 20px;
 }
 
 #particles-js {

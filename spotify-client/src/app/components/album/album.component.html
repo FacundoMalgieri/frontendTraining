@@ -1,27 +1,36 @@
 <div class="wrapper">
-    <div class="container-fluid">
-        <button id="navigateBack" (click)="navigateBack()" class="btn btn-default"><i class="glyphicon glyphicon-arrow-left"></i></button>
-        <div class="row dark">
-            <div class="col-md-6 white text-center col-max-height">
-                <img id="resultImg" src="{{result?.images['0']?.url}}" alt="" class="img-responsive">
-                <div class="gradient"></div>
-                <div>
-                    <h1 id="resultName">{{result?.name}}</h1>
-                    <h4 id="popularity">Sello: {{result?.label}} <br> Fecha de lanzamiento: {{result?.release_date}} <br> Popularidad: {{result?.popularity}}%
-                    </h4>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <ul class="list-group">
-                    <li *ngFor="let track of result?.tracks?.items" class="list-group-item">
-                        <span id="trackName" class="pull-left">{{track?.name}}</span>
-                        <audio class="pull-right" controls>
-                            <source src="{{track?.preview_url}}" type="audio/ogg">
-                        </audio>
-                        <div class="clearfix"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid">
+		<button id="navigateBack" (click)="navigateBack()" class="btn btn-default"><i
+			class="glyphicon glyphicon-arrow-left"></i></button>
+		<div class="row dark">
+			<div class="col-md-6 white text-center col-max-height">
+				<img id="resultImg" src="{{result?.images['0']?.url}}" alt="" class="img-responsive">
+				<div class="gradient"></div>
+				<div>
+					<h1 id="resultName">{{result?.name}}</h1>
+					<h4 id="popularity">Sello: {{result?.label}} <br> Fecha de lanzamiento: {{result?.release_date}}
+						<br>
+						Popularidad: {{result?.popularity}}%
+					</h4>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<ul class="list-group">
+					<li *ngFor="let track of result?.tracks?.items" class="list-group-item">
+						<span id="trackName" class="pull-left">
+							<span role="button" class="glyphicon glyphicon-star"
+								  (click)="addFavourite(track?.id)"></span>
+							{{track?.name}}
+						</span>
+						<audio *ngIf="hasPreview(track)" class="pull-right" controls>
+							<source src="{{track?.preview_url}}" type="audio/ogg">
+						</audio>
+						<p *ngIf="!hasPreview(track)" class="pull-right red">No preview available</p>
+						<div class="clearfix"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
+

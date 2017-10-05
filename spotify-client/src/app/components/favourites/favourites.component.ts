@@ -6,10 +6,10 @@ import {environment} from '../../../environments/environment';
 @Component({
 	moduleId: module.id,
 	selector: 'album-comp',
-	templateUrl: 'album.component.html',
-	styleUrls: ['album.component.css']
+	templateUrl: 'favourites.component.html',
+	styleUrls: ['favourites.component.css']
 })
-export class AlbumComponent implements OnInit {
+export class FavouritesComponent implements OnInit {
 	result: any;
 	id: any;
 
@@ -23,14 +23,7 @@ export class AlbumComponent implements OnInit {
 	 */
 	ngOnInit() {
 		this.preventMultiplePlay();
-		this.route.params.subscribe(
-			params => {
-				this.id = params['id'];
-				this.webService.get(environment.baseSearchUrl + 'albums/' + this.id).subscribe(res => {
-					this.result = res;
-				});
-			}
-		);
+		this.getFavourites();
 	}
 
 	/**
@@ -48,22 +41,32 @@ export class AlbumComponent implements OnInit {
 	}
 
 	/**
-	 * Navigates to the album's artist section.
+	 * Gets all the user favourite tracks
 	 */
-	navigateBack() {
-		this.router.navigate(['/artist/artists/' + this.result.artists[0].id]);
+	getFavourites() {
+		this.webService.get(environment.favouritesUrl).subscribe(res => {
+			this.result = res;
+		}, error => {
+			if (error.statusText === 'Unauthorized') {
+				this.webService.generateToken();
+			}
+		});
 	}
 
 	/**
 	 * Add a track to users favourite list.
 	 * @param {string} id
 	 */
-	addFavourite(id: string) {
-		this.webService.put(environment.addFavourite + id).subscribe(res => {
-			if (res.status === 200) {
-				alert('Track guardado correctamente');
-			}
-		});
+	removeFavourite(id: string) {
+		const that = this;
+		if (confirm('Estas seguro que deseas remover este track?')) {
+			this.webService.delete(environment.addFavourite + id).subscribe(res => {
+				if (res.status === 200) {
+					alert('Track removido correctamente');
+					that.getFavourites();
+				}
+			});
+		}
 	}
 
 	/**
@@ -72,6 +75,7 @@ export class AlbumComponent implements OnInit {
 	 * @returns {boolean}
 	 */
 	hasPreview(item) {
-		return item.preview_url !== null;
+		return item.track.preview_url !== null;
 	}
 }
+

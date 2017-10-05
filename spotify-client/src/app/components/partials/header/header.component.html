@@ -10,12 +10,13 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a href="#"><img src="assets/images/logo.jpg" alt="logo agencia" height="50"></a>                    
+                    <a href="#"><img src="assets/images/logo.jpg" alt="logo agencia" height="50"></a>
                 </div>
                 <div class="collapse navbar-collapse text-center" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Home</a></li>
                         <li><a [routerLink]="['/explorar']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Explorar</a></li>
+                        <li><a [routerLink]="['/favoritos']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Favoritos</a></li>
                         <li><a [routerLink]="['/aboutus']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a></li>
                     </ul>
                 </div>

@@ -1,0 +1,23 @@
+<div class="wrapper">
+	<div class="container-fluid">
+		<div class="row dark">
+			<div class="col-md-offset-2 col-md-8">
+				<ul class="list-group">
+					<li *ngFor="let item of result?.items" class="list-group-item">
+						<span id="trackName" class="pull-left">
+							<span role="button" class="glyphicon glyphicon-remove"
+								  (click)="removeFavourite(item?.track?.id)"></span>
+							{{item?.track?.name}}
+						</span>
+						<audio *ngIf="hasPreview(item)" id="player" class="pull-right" controls>
+							<source src="{{item?.track?.preview_url}}" type="audio/ogg">
+						</audio>
+						<p *ngIf="!hasPreview(item)" class="pull-right red">No preview available</p>
+						<div class="clearfix"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+

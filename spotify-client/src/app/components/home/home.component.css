@@ -3,130 +3,137 @@
  * Home
  * =============================
  */
+img {
+  width: 100%;
+}
+
 .carousel-control {
-    opacity: 1;
-    background: none;
+  opacity: 1;
+  background: none;
 }
 
 .carousel-content {
-    font-size: 100px !important;
-    font-weight: 900 !important;
-    text-shadow: #333 1px 2px;
+  font-size: 100px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: #333 1px 2px;
 }
 
 @media only screen and (max-width: 700px) {
-    .carousel-content {
-        font-size: 40px !important;
-        height: 75px;
-    }
-    .btn{ 
-        margin-top: 10% !important;
-    }
+  .carousel-content {
+    font-size: 50px;
+    height: 75px;
+    margin-bottom: 10%;
+  }
+
+  .btn {
+    margin-top: 10%;
+  }
 }
 
 .btn {
-    margin-top: 5%;
-    font-size: 14px;
-    line-height: 1.5;
-    border-radius: 500px;
-    padding: 18px 48px 16px;
-    transition-property: background-color,border-color,color,box-shadow,filter;
-    transition-duration: .3s;
-    letter-spacing: 2px;
-    width: 200px;
-    text-transform: uppercase;
-    font-weight: 900;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    border: 1px solid transparent;
- }
+  margin-top: 5%;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 500px;
+  padding: 18px 48px 16px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: .3s;
+  letter-spacing: 2px;
+  width: 200px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
 
-.no-padding{
-    padding: 0;
+.no-padding {
+  padding: 0;
 }
 
 /* welcome (home intro) */
 .welcome {
-    background: #fff;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+  background: #fff;
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
 }
 
 .welcome p {
-    margin: 0 !important;
-    color: #1db954;
-    display: inline-block;
-    font-size: 1.3em;
-    padding-top: 10px;
+  margin: 0;
+  color: #1db954;
+  display: inline-block;
+  font-size: 1.3em;
+  padding-top: 10px;
 }
 
 .welcome span {
-    color: #999;
-    display: block;
-    font-size: 0.8em;
+  color: #999;
+  display: block;
+  font-size: 0.8em;
 }
 
 .welcome .get-started {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
-    text-align: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  text-align: right;
 }
 
 /* our solutions */
 .our-solutions {
-    padding: 100px 0;
+  padding: 100px 0;
 }
 
 .our-solutions .solution {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .our-solutions .solution .solution-icon {
-    display: inline-block;
-    background: #ffffff;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
-    width: 160px;
-    height: 160px;
-    border-radius: 90px;
-    text-align: center;
-    line-height: 160px;
-    transition: all 0.5s ease-in-out;
-    margin-bottom: 20px;
+  display: inline-block;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  width: 160px;
+  height: 160px;
+  border-radius: 90px;
+  text-align: center;
+  line-height: 160px;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 20px;
 }
 
 .our-solutions .solution:hover .solution-icon {
-    background: #1db954;
-    color: #fff;
-    transition: all 0.8s;
-    -webkit-animation-name: bounceIn;
-    animation-name: bounceIn;
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    -webkit-animation-duration: 0.8s;
-    animation-duration: 0.8s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  background: #1db954;
+  color: #fff;
+  transition: all 0.8s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .our-solutions .solution .solution-icon i {
-    font-size: 40px;
-    line-height: 160px;
+  font-size: 40px;
+  line-height: 160px;
 }
 
 .our-solutions .solution .solution-info h1,
 .our-solutions .solution .solution-info h2,
 .our-solutions .solution .solution-info h3 {
-    color: #1db954;
-    text-transform: uppercase;
-    font-size: 18px;
+  color: #1db954;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 
 .our-solutions .solution .solution-info p {
-    font-size: 14px;
-    line-height: 24px;
-    color: #aaaaaa;
+  font-size: 14px;
+  line-height: 24px;
+  color: #aaaaaa;
 }
 

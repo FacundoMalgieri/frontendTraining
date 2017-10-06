@@ -30,11 +30,10 @@ export class ArtistComponent implements OnInit {
         const url = environment.baseSearchUrl + type + '/' + this.id + '/';
         this.webService.get(url).subscribe(res => {
           this.result = res;
-        });
+        }, error => this.errorHandler(error));
         this.webService.get(url + 'albums').subscribe(res => {
           this.albums = res;
-        });
-
+        }, error => this.errorHandler(error));
       }
     );
   }
@@ -55,4 +54,15 @@ export class ArtistComponent implements OnInit {
     this.router.navigate(['/album/' + id]);
   }
 
+	/**
+	 * If the error's status text is Unauthorized it generates a new token.
+	 * (If user isn't logged it will redirect to spotify's login form).
+	 *
+	 *  @param error the error from the response.
+	 */
+	private errorHandler(error: any) {
+		if (error.statusText === 'Unauthorized') {
+			this.webService.generateToken();
+		}
+	}
 }

@@ -28,7 +28,7 @@ export class AlbumComponent implements OnInit {
 				this.id = params['id'];
 				this.webService.get(environment.baseSearchUrl + 'albums/' + this.id).subscribe(res => {
 					this.result = res;
-				});
+				}, error => this.errorHandler(error));
 			}
 		);
 	}
@@ -73,5 +73,17 @@ export class AlbumComponent implements OnInit {
 	 */
 	hasPreview(item) {
 		return item.preview_url !== null;
+	}
+
+	/**
+	 * If the error's status text is Unauthorized it generates a new token.
+	 * (If user isn't logged it will redirect to spotify's login form).
+	 *
+	 *  @param error the error from the response.
+	 */
+	private errorHandler(error: any) {
+		if (error.statusText === 'Unauthorized') {
+			this.webService.generateToken();
+		}
 	}
 }

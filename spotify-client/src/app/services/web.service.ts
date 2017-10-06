@@ -8,12 +8,11 @@ import {ActivatedRoute} from '@angular/router';
 @Injectable()
 export class WebService {
 	scope = 'user-follow-modify user-follow-read user-library-read user-library-modify user-read-private user-read-birthdate user-read-email user-top-read';
-	clientId = 'b6eef19106214c13bd0c2811ea88f407';
 	response_type = 'token';
 	token: string;
 	url = environment.authorizeUrl +
 		'response_type=' + this.response_type +
-		'&client_id=' + this.clientId +
+		'&client_id=' + environment.clientId +
 		'&scope=' + this.scope +
 		'&redirect_uri=' + environment.redirectUri;
 

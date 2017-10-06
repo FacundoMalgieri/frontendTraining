@@ -1,85 +1,91 @@
 a {
-  cursor: pointer;
+	cursor: pointer;
 }
 
-.col-md-4 {
-  padding: 2%;
-  width: 33.33%;
-  float: left;
+.thumbnail {
+	object-fit: cover;
+	width: 150px;
+	height: 150px;
+	margin: auto;
+}
+
+.col-md-4, .col-sm-6 {
+	margin-top: 3%;
+	margin-bottom: 3%;
 }
 
 #categories {
-  font-size: 22px;
-  font-weight: 900;
-  margin: auto;
+	font-size: 22px;
+	font-weight: 900;
+	margin: auto;
 }
 
 #categories a {
-  color: white;
-  text-decoration: none;
-  text-shadow: 1px 2px black;
+	color: white;
+	text-decoration: none;
+	text-shadow: 1px 2px black;
 }
 
 #categories li:hover {
-  background-color: rgba(3, 247, 49, 0.40);
+	background-color: rgba(3, 247, 49, 0.40);
 }
 
 #categories li {
-  text-align: center;
-  padding: 2%;
-  padding-right: 5%;
-  padding-left: 5%;
-  text-transform: uppercase;
-  margin-bottom: 0;
+	text-align: center;
+	padding: 2%;
+	padding-right: 5%;
+	padding-left: 5%;
+	text-transform: uppercase;
+	margin-bottom: 0;
 }
 
 #search-label {
-  margin-top: 0;
-  color: white;
-  padding: 10px;
+	margin-top: 0;
+	color: white;
+	padding: 10px;
 }
 
 #search {
-  font-size: 50px;
-  font-weight: 700;
-  min-height: 100px;
-  margin-bottom: 3%;
-  box-shadow: 2px 4px black;
+	font-size: 50px;
+	font-weight: 700;
+	min-height: 100px;
+	margin-bottom: 3%;
+	box-shadow: 2px 4px black;
 }
 
 #resultName {
-  color: white;
-  margin: 3%;
-}
-
-#resultImg {
-  width: 150px;
-  height: 150px;
+	color: white;
+	margin: 3%;
 }
 
 #results {
-  margin: 1%;
-  border: 0;
-  border-radius: 0;
-  background-color: rgba(25, 25, 25, 0.7);
-  box-shadow: 2px 4px black;
-  min-height: 200px;
+	margin: 1%;
+	border: 0;
+	border-radius: 0;
+	background-color: rgba(25, 25, 25, 0.7);
+	box-shadow: 2px 4px black;
+	min-height: 200px;
 }
 
 .dark {
-  margin-bottom: 0%;
-  border: 0;
-  border-radius: 0;
-  background-color: rgba(25, 25, 25, 1);
+	margin-bottom: 0%;
+	border: 0;
+	border-radius: 0;
+	background-color: rgba(25, 25, 25, 1);
 }
 
 .wrapper {
-  min-height: 100vh;
-  background: black;
+	min-height: 100vh;
+	background: black;
 }
 
-@media only screen and (max-width: 700px) {
-  #search {
-    font-size: 30px;
-  }
+@media only screen and (max-width: 767px) {
+	#search {
+		font-size: 30px;
+	}
+
+	.thumbnail {
+		width: 300px;
+		height: 300px;
+	}
 }

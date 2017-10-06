@@ -1,14 +1,14 @@
 <div class="wrapper">
     <section class="container">
         <ul id="categories" class="list-inline text-center">
-            <li><a role="button" (click)="selectType('new-releases')">Nuevos Lanzamientos</a></li>
-            <li><a role="button" (click)="selectType('categories')">Categorias</a></li>
-            <li><a role="button" (click)="selectType('featured-playlists')">Playlists Recomendadas</a></li>
+            <li><a role="button" (click)="selectType('new-releases')">New Releases</a></li>
+            <li><a role="button" (click)="selectType('categories')">Categories</a></li>
+            <li><a role="button" (click)="selectType('featured-playlists')">Recommended Playlists</a></li>
         </ul>
         <div class="row">
             <div class="col-md-12">
-                <p id="search-label" class="dark">Busca artistas, canciones, álbumes o playlists</p>
-                <input type="text" [formControl]="search" class="form-control dark" id="search" name="search" placeholder="Escribe aquí..."
+                <p id="search-label" class="dark">Search artists, songs, albums or playlists</p>
+                <input type="text" [formControl]="search" class="form-control dark" id="search" name="search" placeholder="Type here..."
                     autofocus autocomplete>
             </div>
         </div>

@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {WebService} from '../../services/web.service';
 import {environment} from '../../../environments/environment';
 
 @Component({
 	moduleId: module.id,
-	selector: 'album-comp',
 	templateUrl: 'favourites.component.html',
 	styleUrls: ['favourites.component.css']
 })
@@ -13,17 +11,15 @@ export class FavouritesComponent implements OnInit {
 	result: any;
 	id: any;
 
-	constructor(private router: Router,
-	            private route: ActivatedRoute,
-	            private webService: WebService) {
+	constructor(private webService: WebService) {
 	}
 
 	/**
 	 * Subscribes to the url's params in order to fetch the album
 	 */
 	ngOnInit() {
-		this.preventMultiplePlay();
 		this.getFavourites();
+		this.preventMultiplePlay();
 	}
 
 	/**
@@ -59,10 +55,10 @@ export class FavouritesComponent implements OnInit {
 	 */
 	removeFavourite(id: string) {
 		const that = this;
-		if (confirm('Estas seguro que deseas remover este track?')) {
+		if (confirm('Are you sure you want to remove this track?')) {
 			this.webService.delete(environment.addFavourite + id).subscribe(res => {
 				if (res.status === 200) {
-					alert('Track removido correctamente');
+					alert('Track removed successfully');
 					that.getFavourites();
 				}
 			});

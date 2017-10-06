@@ -1,8 +1,7 @@
-import { NgModule } from '@angular/core';
-import { AppRoutes } from "../../app.routes";
-import { SharedModule } from "../../shared.module";
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from "../partials/header/header.component";
+import {NgModule} from '@angular/core';
+import {SharedModule} from '../../shared.module';
+import {FooterComponent} from './footer/footer.component';
+import {HeaderComponent} from './header/header.component';
 
 @NgModule({
     declarations: [
@@ -17,4 +16,6 @@ import { HeaderComponent } from "../partials/header/header.component";
         FooterComponent
     ],
 })
-export class PartialsModule { }
+export class PartialsModule {
+
+}

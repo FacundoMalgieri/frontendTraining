@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {environment} from 'environments/environment';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Injectable()
 export class WebService {
@@ -16,17 +16,25 @@ export class WebService {
 		'&scope=' + this.scope +
 		'&redirect_uri=' + environment.redirectUri;
 
-	constructor(private http: Http, private route: ActivatedRoute) {
+	constructor(private http: Http, private route: ActivatedRoute, private router: Router) {
 	}
 
+
+	isLoggedIn() {
+		return !!localStorage.getItem('token');
+	}
+
+	/**
+	 * Generates the token to use spotify's api
+	 */
 	generateToken(): void {
-		window.location.href = this.url;
-		const tokenRoute = this.route.fragment.map(fragment => fragment);
-		tokenRoute.subscribe(fragment => {
+		window.location.replace(this.url);
+		this.route.fragment.map(fragment => fragment).subscribe(fragment => {
 			const fragment1 = !!fragment ? fragment.match(/^(.*?)&/) : '';
 			if (!!fragment1) {
 				this.token = fragment1[1].replace('access_token=', '');
 				localStorage.setItem('token', this.token);
+				alert('Login successful');
 			}
 		});
 	}

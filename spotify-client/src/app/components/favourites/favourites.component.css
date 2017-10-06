@@ -5,6 +5,9 @@ ol {
 audio {
 	width: 100px;
 }
+.white {
+	color: white;
+}
 
 .red {
 	color: red;
@@ -30,7 +33,6 @@ audio {
 }
 
 .wrapper {
-	min-height: 100vh;
 	background: black;
 }
 

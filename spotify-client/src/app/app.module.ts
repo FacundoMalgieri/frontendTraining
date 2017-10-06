@@ -6,7 +6,7 @@ import {AppRoutes} from './app.routes';
 import {NgModule} from '@angular/core';
 
 import {ExploreComponent} from './components/explore/explore.component';
-import {AboutUsComponent} from './components/aboutus/aboutus.component';
+import {AboutComponent} from './components/about/about.component';
 import {ArtistComponent} from './components/artist/artist.component';
 import {AlbumComponent} from './components/album/album.component';
 import {PartialsModule} from './components/partials/partials.module';
@@ -21,7 +21,7 @@ import {FavouritesComponent} from './components/favourites/favourites.component'
 		FavouritesComponent,
 		HomeComponent,
 		ExploreComponent,
-		AboutUsComponent,
+		AboutComponent,
 		ArtistComponent
 	],
 	imports: [

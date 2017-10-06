@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import {NavigationEnd, Router} from '@angular/router';
+import {FormControl, Validators} from '@angular/forms';
 import {WebService} from '../../services/web.service';
 import {environment} from '../../../environments/environment';
 
@@ -17,9 +17,7 @@ export class ExploreComponent implements OnInit {
 	trackResults: any[] = [];
 	albumResults: any[] = [];
 
-	constructor(private fb: FormBuilder,
-	            private router: Router,
-	            private route: ActivatedRoute,
+	constructor(private router: Router,
 	            private webService: WebService) {
 	}
 
@@ -64,7 +62,7 @@ export class ExploreComponent implements OnInit {
 	 * Some functionalities aren't implemented to save time due they'r not a functional or optional requisite
 	 */
 	openAlert() {
-		alert('La funcionalidad para playlists y categorías aún no esta soportada.');
+		alert('Playlists and Categories not supported yet.');
 	}
 
 	/**

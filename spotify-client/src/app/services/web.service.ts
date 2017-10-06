@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
 import {environment} from 'environments/environment';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Injectable()
 export class WebService {
@@ -16,7 +16,7 @@ export class WebService {
 		'&scope=' + this.scope +
 		'&redirect_uri=' + environment.redirectUri;
 
-	constructor(private http: Http, private route: ActivatedRoute, private router: Router) {
+	constructor(private http: Http, private route: ActivatedRoute) {
 	}
 
 
